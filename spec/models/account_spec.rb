@@ -24,7 +24,7 @@ RSpec.describe Account, type: :model do
   it { expect(empty_nonce).not_to be_valid }
   it { expect(not_valid_hash).not_to be_valid }
 
-  it "should expect uniqueness" do
+  it "expect uniqueness" do
     create :account
     expect(account).not_to be_valid
   end
