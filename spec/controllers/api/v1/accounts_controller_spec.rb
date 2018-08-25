@@ -13,6 +13,8 @@ RSpec.describe Api::V1::AccountsController, type: :controller do
     it { expect(json).to include("id") }
     it { expect(json).to include("acc_hash") }
     it { expect(json).not_to include("secret_key") }
+    it { expect(json).not_to include("nonce") }
+    it { expect(json).not_to include("timestamp") }
   end
 
   describe "GET #show not valid" do
@@ -27,6 +29,8 @@ RSpec.describe Api::V1::AccountsController, type: :controller do
     it { expect(json).not_to include("id") }
     it { expect(json).not_to include("acc_hash") }
     it { expect(json).not_to include("secret_key") }
+    it { expect(json).not_to include("nonce") }
+    it { expect(json).not_to include("timestamp") }
   end
 
   describe "POST #create" do
